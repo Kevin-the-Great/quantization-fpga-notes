@@ -1,0 +1,1 @@
+measurement_id,paper_id,configuration,weight_bits,activation_bits,quantization_scope,precision_exceptions,scaling,model,benchmark,protocol,platform,implementation,frequency_mhz,evidence_level,metric,value,unit,timing_boundary,baseline,source_url,source_locator,checked_on,notes
