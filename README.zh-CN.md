@@ -8,13 +8,41 @@
 
 **按技术问题组织，按会议期刊发现，按适用条件比较。** 每篇收录资料需要说明：解决什么问题、依赖什么条件、对当前研究有什么启发，以及还需要验证什么。
 
-更新日期：2026-09-14。首批整理 **10 篇论文与 1 项工程参考**，后续持续补充。初筛笔记由助理辅助整理；阅读、复现与汇报进度分别记录。
+更新日期：2026-09-14。共 **25 篇论文与 1 项工程参考**；本次新增 **12 篇 2026 年论文/预印本，以及 3 篇 2025 年下半年工作**。两条主线均优先展示新论文，早期论文作为比较背景。初筛笔记由助理辅助整理；个人阅读、复现与汇报进度分别记录。
+
+下表日期对应已核实的公开版本：通常为 arXiv v1，UDP 为出版社在线日期，不保证是最早披露时间。**2026 分组包含该年录用/发表的论文和该年预印本**；LUT-LLM 的预印本始于 2025 年 11 月。“已录用”表示核实了官方议程，“已发表”表示核实了正式出版来源。详见[目录日期字段](data/README.md)。
+
+**下一次组会：**从[更新后的阅读安排](weekly/2026-09-14.md)选一篇 2026 年主论文，配一项针对性比较。
 
 [量化算法](#量化算法) · [FPGA 架构](#fpga-架构) · [会议与期刊](venues.md) · [阅读笔记](notes/hgpipe-2024.md) · [周记录](weekly/2026-09-14.md) · [维护方法](WORKFLOW.md)
 
 ## 量化算法
 
 比较重构、缩放、旋转与时间步校准，保留原始模型、数值格式和适用条件。完整分析见[量化方法横向比较](comparisons/quantization.md)。
+
+### 2026 年论文
+
+| 公开版本日期 | 场合 / 状态 | 论文 | 核心机制与比较点 |
+|---|---|---|---|
+| 2026-07-02 | arXiv · 预印本 | [OrbitQuant](https://arxiv.org/abs/2607.02461) | 归一化旋转与共享非均匀码本；免范围校准仍有在线运算。 [笔记](notes/orbitquant-2026.md) |
+| 2026-05-27 | arXiv · 预印本 | [HoloQ-VLA](https://arxiv.org/abs/2605.28803) | 复合旋转与逐时间步尺度，用于语言与扩散动作模块的 W4A4；8 月 11 日更新至 v3。 [笔记](notes/holoq-vla-2026.md) |
+| 2026-05-03 | FCCM · 已录用 | [ViM-Q](https://arxiv.org/abs/2605.01935) | APoT 权重、逐 token 激活量化和查表/SSM 流水；功耗为估计值。 [笔记](notes/vim-q-2026.md) |
+| 2026-04-24 | FCCM · 已录用 | [HGQ-LUT](https://arxiv.org/abs/2604.22293) | 以资源目标训练量化逻辑查表层；硬件证据为 OOC 布局布线。 [笔记](notes/hgq-lut-2026.md) |
+| 2026-04-13 | ICML · 已录用 | [ReSpinQuant](https://arxiv.org/abs/2604.11080) | 逐层旋转与低秩残差基底修正；比较精度收益和在线修正代价。 [笔记](notes/respinquant-2026.md) |
+| 2026-03-19 | arXiv · 预印本 | [6Bit-Diffusion](https://arxiv.org/abs/2603.18742) | NVFP4/INT8 激活路由结合时间缓存；区分精度选择与跳算收益。 [笔记](notes/6bit-diffusion-2026.md) |
+| 2026-02-23 | CVPR · 已发表 | [QuantVLA](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_QuantVLA_Scale-Calibrated_Post-Training_Quantization_for_Vision-Language-Action_Models_CVPR_2026_paper.html) | 用注意力温度与输出能量校准修正选择性 W4A8；扩散模块的注意力投影保留浮点。 [笔记](notes/quantvla-2026.md) |
+| 2026-02-03 | ICLR · 已发表 | [QVLA](https://proceedings.iclr.cc/paper_files/paper/2026/hash/fa064215307efaad75bebc7a2e3194a4-Abstract-Conference.html) | 根据动作敏感性分配通道位宽；权重位宽为平均预算，projector 与动作头保留 BF16。 [笔记](notes/qvla-2026.md) |
+| 2026-01-14 | ACL · 已发表 | [MXFP PTQ Benchmark](https://aclanthology.org/2026.acl-long.1854/) | MXFP 下的 PTQ、共享尺度误差及模块敏感性；MXFP4 与 INT4 分开比较。 [笔记](notes/mxfp-ptq-benchmark-2026.md) |
+| 2025-11-09 | FCCM · 已录用 | [LUT-LLM](https://arxiv.org/html/2511.06174v2) | 向量联合量化和存储查表；需要模型转换与训练。预印本始于 2025 年。 [笔记](notes/lut-llm-2026.md) |
+
+### 2025 年下半年补充
+
+| 公开版本日期 | 场合 / 状态 | 论文 | 核心机制与比较点 |
+|---|---|---|---|
+| 2025-11-10 | ICCAD · 已发表 | [QUARK](https://arxiv.org/html/2511.06767v1) | 通过量化和近似共享非线性子算子；比较电路复用与并发执行。 [笔记](notes/quark-2025.md) |
+| 2025-09-30 | WASPAA · 已录用 | [Audio DiT PTQ](https://arxiv.org/abs/2510.00313) | 时间步缩放与 FP16 低秩补偿；原文 A4/A8 表格标注存在待核实矛盾。 [笔记](notes/audio-dit-ptq-2025.md) |
+
+### 前序背景
 
 | 年份 | 场合 | 论文 | 核心机制与比较点 |
 |---|---|---|---|
@@ -29,6 +57,25 @@
 ## FPGA 架构
 
 比较计算阵列、数据流、硬件复用、流水线和存储组织；HLS 与映射工具作为实现支撑。完整分析见[FPGA 架构横向比较](comparisons/architectures.md)。
+
+### 2026 年论文
+
+| 公开版本日期 | 场合 / 状态 | 论文 | 核心机制与比较点 |
+|---|---|---|---|
+| 2026-05-03 | FCCM · 已录用 | [ViM-Q](https://arxiv.org/abs/2605.01935) | APoT 权重、逐 token 激活量化和查表/SSM 流水；功耗为估计值。 [笔记](notes/vim-q-2026.md) |
+| 2026-04-24 | FCCM · 已录用 | [HGQ-LUT](https://arxiv.org/abs/2604.22293) | 以资源目标训练量化逻辑查表层；硬件证据为 OOC 布局布线。 [笔记](notes/hgq-lut-2026.md) |
+| 2026-04-23 | FCCM · 已录用 | [GraphLeap](https://arxiv.org/abs/2604.21290) | 建图与特征更新并行；改变依赖关系后需要微调。 [笔记](notes/graphleap-2026.md) |
+| 2026-02-21 | FPGA · 已发表 | [UDP](https://doi.org/10.1145/3748173.3779194) | 参数化 DSP 打包及有符号修正；按实际操作数位宽核算有效乘积。 [笔记](notes/udp-2026.md) |
+| 2025-11-09 | FCCM · 已录用 | [LUT-LLM](https://arxiv.org/html/2511.06174v2) | 向量联合量化和存储查表；需要模型转换与训练。预印本始于 2025 年。 [笔记](notes/lut-llm-2026.md) |
+
+### 2025 年下半年补充
+
+| 公开版本日期 | 场合 / 状态 | 论文 | 核心机制与比较点 |
+|---|---|---|---|
+| 2025-11-10 | ICCAD · 已发表 | [QUARK](https://arxiv.org/html/2511.06767v1) | 通过量化和近似共享非线性子算子；比较电路复用与并发执行。 [笔记](notes/quark-2025.md) |
+| 2025-07-04 | ICCAD · 已发表 | [Hummingbird](https://arxiv.org/html/2507.03308v2) | DSP 复用、DDR 对齐与 GQA 缓冲；W4 存储和 INT24 向量计算分别记录。 [笔记](notes/hummingbird-2025.md) |
+
+### 前序背景
 
 | 年份 | 场合 | 论文 | 核心机制与比较点 |
 |---|---|---|---|
@@ -60,7 +107,7 @@
 | [量化方法横向比较](comparisons/quantization.md) | 比较重构、缩放、旋转、时间步校准及部署条件 |
 | [FPGA 架构横向比较](comparisons/architectures.md) | 比较硬件复用、流水线、存储；相关 HLS 工具作为实现参考 |
 | [HG-PIPE 阅读示例](notes/hgpipe-2024.md) | 一篇论文如何拆成问题、证据、启发与待验证假设 |
-| [第一轮阅读安排](weekly/2026-09-14.md) | 两条主线交替推进，可以根据已有阅读基础调整 |
+| [2026 组会阅读安排](weekly/2026-09-14.md) | 新论文主读、针对性对照与组会问题 |
 | [FPGA 架构汇报示例](talks/transformer-reuse-and-pipeline.md) | 一次架构方向的横向比较；量化方向也可独立组织汇报 |
 | [维护方法](WORKFLOW.md) | 每周怎样增加资料、记录进度和更新比较 |
 | [字段说明](data/README.md) | 论文级与实验配置级数据如何记录 |

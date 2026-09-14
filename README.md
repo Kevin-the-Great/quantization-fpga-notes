@@ -8,7 +8,11 @@ The quantization track covers low-bit representations, quantization error, and c
 
 **Organize by technical problem, discover through conferences and journals, and compare under explicit conditions.** Each entry should explain the problem it solves, its assumptions, its relevance to the current research, and what still needs to be validated.
 
-Updated: 2026-09-14. The initial collection contains **10 papers and 1 engineering reference**, with further additions planned. Initial screening notes were prepared with assistant support; reading, reproduction, and presentation progress are recorded separately.
+Updated: 2026-09-14. **25 papers and 1 engineering reference**, including **12 newly added 2026 papers/preprints and 3 additions from 2025 H2**. New work leads each track; earlier papers provide comparison context. Screening notes are assistant-prepared; personal reading, reproduction, and presentation progress are recorded separately.
+
+Dates below identify a verified public version: arXiv v1, or publisher online date for UDP. They do not guarantee the earliest disclosure. **2026 includes accepted/published 2026 papers and 2026 preprints**; LUT-LLM first appeared in November 2025. Accepted means the official program was verified; published means a proceedings source was verified. See the [catalog and date fields](data/README.md).
+
+**For the next seminar:** choose a 2026 main paper from the [updated reading plan](weekly/2026-09-14.md), then use one focused comparison.
 
 [Quantization Algorithms](#quantization-algorithms) · [FPGA Architectures](#fpga-architectures) · [Conferences and Journals](venues.md) · [Reading Notes](notes/hgpipe-2024.md) · [Weekly Notes](weekly/2026-09-14.md) · [Workflow](WORKFLOW.md)
 
@@ -17,6 +21,30 @@ Detailed notes and supporting documents are currently in Chinese.
 ## Quantization Algorithms
 
 Compare reconstruction, scaling, rotation, and timestep calibration while preserving the original models, numerical formats, and applicability conditions. See the [quantization comparison](comparisons/quantization.md) for the full analysis.
+
+### 2026 Papers
+
+| Public version date | Venue / status | Paper | Mechanism and comparison focus |
+|---|---|---|---|
+| 2026-07-02 | arXiv · preprint | [OrbitQuant](https://arxiv.org/abs/2607.02461) | Normalized rotations and shared nonuniform codebooks; calibration-free ranges still require online operations. [Note](notes/orbitquant-2026.md) |
+| 2026-05-27 | arXiv · preprint | [HoloQ-VLA](https://arxiv.org/abs/2605.28803) | Composite rotations and per-step scales for W4A4 language and diffusion action modules; v3 updated on August 11. [Note](notes/holoq-vla-2026.md) |
+| 2026-05-03 | FCCM · accepted | [ViM-Q](https://arxiv.org/abs/2605.01935) | APoT weights, token-wise activation quantization, and lookup/SSM pipelines; power is estimated. [Note](notes/vim-q-2026.md) |
+| 2026-04-24 | FCCM · accepted | [HGQ-LUT](https://arxiv.org/abs/2604.22293) | Train quantized logic-lookup layers with a resource objective; hardware evidence is OOC post-route. [Note](notes/hgq-lut-2026.md) |
+| 2026-04-13 | ICML · accepted | [ReSpinQuant](https://arxiv.org/abs/2604.11080) | Layer-wise rotations and low-rank residual alignment; compare accuracy gains with online correction costs. [Note](notes/respinquant-2026.md) |
+| 2026-03-19 | arXiv · preprint | [6Bit-Diffusion](https://arxiv.org/abs/2603.18742) | NVFP4/INT8 activation routing plus temporal caching; isolate precision selection from skipped computation. [Note](notes/6bit-diffusion-2026.md) |
+| 2026-02-23 | CVPR · published | [QuantVLA](https://openaccess.thecvf.com/content/CVPR2026/html/Zhang_QuantVLA_Scale-Calibrated_Post-Training_Quantization_for_Vision-Language-Action_Models_CVPR_2026_paper.html) | Attention temperature and output-energy calibration for selective W4A8; diffusion attention projections retain floating point. [Note](notes/quantvla-2026.md) |
+| 2026-02-03 | ICLR · published | [QVLA](https://proceedings.iclr.cc/paper_files/paper/2026/hash/fa064215307efaad75bebc7a2e3194a4-Abstract-Conference.html) | Action-sensitive channel bit allocation; weight bits are an average budget, with projector and action head kept in BF16. [Note](notes/qvla-2026.md) |
+| 2026-01-14 | ACL · published | [MXFP PTQ Benchmark](https://aclanthology.org/2026.acl-long.1854/) | PTQ under MXFP formats; shared-scale error and module sensitivity. MXFP4 differs from INT4. [Note](notes/mxfp-ptq-benchmark-2026.md) |
+| 2025-11-09 | FCCM · accepted | [LUT-LLM](https://arxiv.org/html/2511.06174v2) | Vector co-quantization and memory lookups; model conversion and training required. Preprint began in 2025. [Note](notes/lut-llm-2026.md) |
+
+### 2025 H2 Supplement
+
+| Public version date | Venue / status | Paper | Mechanism and comparison focus |
+|---|---|---|---|
+| 2025-11-10 | ICCAD · published | [QUARK](https://arxiv.org/html/2511.06767v1) | Share nonlinear sub-operators through quantization and approximation; compare reuse with concurrent execution. [Note](notes/quark-2025.md) |
+| 2025-09-30 | WASPAA · accepted | [Audio DiT PTQ](https://arxiv.org/abs/2510.00313) | Timestep smoothing and FP16 low-rank compensation; unresolved A4/A8 table labels. [Note](notes/audio-dit-ptq-2025.md) |
+
+### Earlier Context
 
 | Year | Venue | Paper | Mechanism and comparison focus |
 |---|---|---|---|
@@ -31,6 +59,25 @@ Compare reconstruction, scaling, rotation, and timestep calibration while preser
 ## FPGA Architectures
 
 Compare compute arrays, dataflows, hardware reuse, pipelines, and memory organization, with HLS and mapping tools as implementation support. See the [FPGA architecture comparison](comparisons/architectures.md) for the full analysis.
+
+### 2026 Papers
+
+| Public version date | Venue / status | Paper | Mechanism and comparison focus |
+|---|---|---|---|
+| 2026-05-03 | FCCM · accepted | [ViM-Q](https://arxiv.org/abs/2605.01935) | APoT weights, token-wise activation quantization, and lookup/SSM pipelines; power is estimated. [Note](notes/vim-q-2026.md) |
+| 2026-04-24 | FCCM · accepted | [HGQ-LUT](https://arxiv.org/abs/2604.22293) | Train quantized logic-lookup layers with a resource objective; hardware evidence is OOC post-route. [Note](notes/hgq-lut-2026.md) |
+| 2026-04-23 | FCCM · accepted | [GraphLeap](https://arxiv.org/abs/2604.21290) | Overlap graph construction and feature updates; dependency changes require fine-tuning. [Note](notes/graphleap-2026.md) |
+| 2026-02-21 | FPGA · published | [UDP](https://doi.org/10.1145/3748173.3779194) | Parameterized DSP packing and signed corrections; verify useful products for each operand width. [Note](notes/udp-2026.md) |
+| 2025-11-09 | FCCM · accepted | [LUT-LLM](https://arxiv.org/html/2511.06174v2) | Vector co-quantization and memory lookups; model conversion and training required. Preprint began in 2025. [Note](notes/lut-llm-2026.md) |
+
+### 2025 H2 Supplement
+
+| Public version date | Venue / status | Paper | Mechanism and comparison focus |
+|---|---|---|---|
+| 2025-11-10 | ICCAD · published | [QUARK](https://arxiv.org/html/2511.06767v1) | Share nonlinear sub-operators through quantization and approximation; compare reuse with concurrent execution. [Note](notes/quark-2025.md) |
+| 2025-07-04 | ICCAD · published | [Hummingbird](https://arxiv.org/html/2507.03308v2) | DSP reuse, aligned DDR access, and GQA buffering; W4 storage differs from INT24 vector computation. [Note](notes/hummingbird-2025.md) |
+
+### Earlier Context
 
 | Year | Venue | Paper | Mechanism and comparison focus |
 |---|---|---|---|
@@ -62,7 +109,7 @@ Record numerical results in the [results table](data/measurements.csv) by experi
 | [Quantization comparison](comparisons/quantization.md) | Reconstruction, scaling, rotation, timestep calibration, and deployment conditions |
 | [FPGA architecture comparison](comparisons/architectures.md) | Hardware reuse, pipelines, and memory; relevant HLS tools as implementation references |
 | [HG-PIPE example reading note](notes/hgpipe-2024.md) | How to break a paper down into questions, evidence, insights, and hypotheses to validate |
-| [First reading cycle](weekly/2026-09-14.md) | Alternate between the two tracks, adjusting for prior reading |
+| [2026 seminar reading plan](weekly/2026-09-14.md) | Recent main papers, targeted comparisons, and presentation questions |
 | [Example FPGA architecture presentation](talks/transformer-reuse-and-pipeline.md) | A presentation built around an architecture comparison; quantization can also be presented independently |
 | [Workflow](WORKFLOW.md) | How to add resources, record progress, and update comparisons each week |
 | [Data fields](data/README.md) | How to record paper metadata and experimental configurations |
