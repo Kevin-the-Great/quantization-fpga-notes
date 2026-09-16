@@ -67,11 +67,13 @@
 |---|---|---|
 | **MICRO** | 执行机制、低比特计算与打包、存储层次、软硬件接口成为主要问题时 | [MICRO 2025 程序](https://microarch.org/micro58/program/index.php) |
 | **HPCA** | 需要研究内存系统、带宽、异构计算和加速器架构时 | [HPCA 2026](https://2026.hpca-conf.org/)，含 Program 和论文入口 |
-| **ISCA** | 需要比较通用架构机制、系统瓶颈和新计算组织时 | [ISCA 2026 程序](https://www.iscaconf.org/isca2026/program/) |
+| **ISCA** | 固定扫描与量化、动作规划及加速器相关的 session；DiTPA 是本库的直接相关实例 | [ISCA 2026 程序](https://www.iscaconf.org/isca2026/program/) |
 | **ASPLOS** | 需要理解架构、编译器、运行时和系统之间的共同优化时 | [ASPLOS 2026 详细程序](https://www.asplos-conference.org/asplos2026/program/index.html) |
 | **PLDI** | 问题涉及硬件 DSL、程序表示、编译变换、可组合调度与正确性时 | [PLDI 2024 研究论文](https://pldi24.sigplan.org/track/pldi-2024-papers)，包含 Allo；后续使用对应年度研究论文页 |
 
 优先检查能支持两条主线的 session、标题和摘要。来源不必使用 FPGA，但要说明对量化算法或 FPGA 架构的具体启发，以及哪些假设依赖 GPU/CPU/ASIC 的特定能力。
+
+2026-09-16 新增实例：[DiTPA](notes/ditpa-2026.md) 出自 [ISCA 2026](https://iscaconf.org/isca2026/program/)，已列为组会优先候选。它提醒我们沿动作规划、跨步复用和软硬件协同等问题查阅体系结构会议；实现平台和可迁移机制仍分别记录。
 
 ## 6. FPGA 架构的实现支撑：怎样阅读 HLS 资料
 

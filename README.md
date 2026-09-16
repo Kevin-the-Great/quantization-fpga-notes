@@ -8,13 +8,13 @@ The quantization track covers low-bit representations, quantization error, and c
 
 **Organize by technical problem, discover through conferences and journals, and compare under explicit conditions.** Each entry should explain the problem it solves, its assumptions, its relevance to the current research, and what still needs to be validated.
 
-Updated: 2026-09-14. **25 papers and 1 engineering reference**, including **12 newly added 2026 papers/preprints and 3 additions from 2025 H2**. New work leads each track; earlier papers provide comparison context. Screening notes are assistant-prepared; personal reading, reproduction, and presentation progress are recorded separately.
+Updated: 2026-09-16. **26 papers and 1 engineering reference**, including **13 papers/preprints from 2026**. DiTPA (ISCA 2026) is the current preferred seminar candidate. Screening notes are assistant-prepared; personal reading, reproduction, and presentation progress are recorded separately.
 
-Dates below identify a verified public version: arXiv v1, or publisher online date for UDP. They do not guarantee the earliest disclosure. **2026 includes accepted/published 2026 papers and 2026 preprints**; LUT-LLM first appeared in November 2025. Accepted means the official program was verified; published means a proceedings source was verified. See the [catalog and date fields](data/README.md).
+Dates below identify a verified public version: arXiv v1, publisher online date for UDP, or the institution-reported publication date for DiTPA. They do not guarantee the earliest disclosure. **2026 includes accepted/published 2026 papers and 2026 preprints**; LUT-LLM first appeared in November 2025. Accepted means the official program was verified; published means a proceedings source was verified. See the [catalog and date fields](data/README.md).
 
-**For the next seminar:** choose a 2026 main paper from the [updated reading plan](weekly/2026-09-14.md), then use one focused comparison.
+**Next seminar priority: [DiTPA — ISCA 2026](notes/ditpa-2026.md).** Focus on how action-planning redundancy informs accelerator design. [Preparation plan](weekly/2026-09-16.md) · [Talk outline](talks/ditpa-2026.md). Earlier candidates remain in the [reading plan](weekly/2026-09-14.md).
 
-[Quantization Algorithms](#quantization-algorithms) · [FPGA Architectures](#fpga-architectures) · [Conferences and Journals](venues.md) · [Reading Notes](notes/hgpipe-2024.md) · [Weekly Notes](weekly/2026-09-14.md) · [Workflow](WORKFLOW.md)
+[Quantization Algorithms](#quantization-algorithms) · [FPGA Architectures](#fpga-architectures) · [Conferences and Journals](venues.md) · [Reading Notes](notes/hgpipe-2024.md) · [Weekly Notes](weekly/2026-09-16.md) · [Workflow](WORKFLOW.md)
 
 Detailed notes and supporting documents are currently in Chinese.
 
@@ -64,6 +64,7 @@ Compare compute arrays, dataflows, hardware reuse, pipelines, and memory organiz
 
 | Public version date | Venue / status | Paper | Mechanism and comparison focus |
 |---|---|---|---|
+| 2026-08-04 | ISCA · published | [DiTPA](https://doi.org/10.1109/ISCA66397.2026.00188) | Action prediction, denoising reuse, and multimodal scheduling. Transfer reference; public artifact uses simulation, hardware platform pending full-text verification. [Note](notes/ditpa-2026.md) |
 | 2026-05-03 | FCCM · accepted | [ViM-Q](https://arxiv.org/abs/2605.01935) | APoT weights, token-wise activation quantization, and lookup/SSM pipelines; power is estimated. [Note](notes/vim-q-2026.md) |
 | 2026-04-24 | FCCM · accepted | [HGQ-LUT](https://arxiv.org/abs/2604.22293) | Train quantized logic-lookup layers with a resource objective; hardware evidence is OOC post-route. [Note](notes/hgq-lut-2026.md) |
 | 2026-04-23 | FCCM · accepted | [GraphLeap](https://arxiv.org/abs/2604.21290) | Overlap graph construction and feature updates; dependency changes require fine-tuning. [Note](notes/graphleap-2026.md) |

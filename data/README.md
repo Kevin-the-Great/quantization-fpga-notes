@@ -29,12 +29,14 @@
 | 字段 | 含义 |
 |---|---|
 | `release_date` | 核实到的公开版本日期；不声称是全网最早披露日期 |
-| `release_date_type` | `arxiv_v1` 或 `publisher_online`；与会议年份分别记录 |
-| `release_date_source` | 支持该日期的 arXiv 历史或出版社元数据 |
+| `release_date_type` | `arxiv_v1`、`publisher_online` 或 `institution_publication`（作者机构记录的出版日期）；与会议年份分别记录 |
+| `release_date_source` | 支持该日期的 arXiv 历史、出版社元数据或作者机构记录 |
 | `read_version` | 本次定向查阅所用版本；不保证与会议最终稿逐字相同 |
 | `added_on` | 本次进入目录的日期；旧条目未补查则留空 |
 
 2026 分组按会议年份或预印本年份整理。LUT-LLM 属于 FCCM 2026，但 arXiv v1 为 2025-11-09；ViM-Q 登记完整稿的 2026-05-03，单页前身另记在笔记中；HoloQ-VLA 使用 2026-08-11 的 v3 题名，并保留原名 Ω-QVLA 以去重。旧条目的新增日期字段留空，不以本次整理日期冒充论文公开日期。
+
+DiTPA 的 `2026-08-04` 来自 HKUST 的 Published 日期；Crossref 的印刷出版时间仅到 `2026-06`。两者保留不同含义，不把该日称为首稿公开日。
 
 ## measurements.csv：一个实验配置一行
 
